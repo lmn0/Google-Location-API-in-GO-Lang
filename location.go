@@ -107,7 +107,7 @@ func createlocation(rw http.ResponseWriter, req *http.Request, p httprouter.Para
 
 //Mongo Persistence
 
- conn, err := mgo.Dial("mongodb://localhost")
+ conn, err := mgo.Dial("mongodb://tjs:password@ds039684.mongolab.com:39684/mongo")
 
     // Check if connection error, is mongo running?
     if err != nil {
@@ -135,7 +135,7 @@ id ,err1:= strconv.Atoi(p.ByName("locid"))
 if err1 != nil {
         panic(err1)
     }
- conn, err := mgo.Dial("mongodb://localhost")
+ conn, err := mgo.Dial("mongodb://tjs:password@ds039684.mongolab.com:39684/mongo")
 
     // Check if connection error, is mongo running?
     if err != nil {
@@ -177,7 +177,7 @@ func updateloc(rw http.ResponseWriter, req *http.Request, p httprouter.Params){
  if err1 != nil {
          panic(err1)
      }
-  conn, err := mgo.Dial("mongodb://localhost")
+  conn, err := mgo.Dial("mongodb://tjs:password@ds039684.mongolab.com:39684/mongo")
 
 //     // Check if connection error, is mongo running?
      if err != nil {
@@ -220,7 +220,7 @@ func deleteloc(rw http.ResponseWriter, req *http.Request, p httprouter.Params){
  if err1 != nil {
          panic(err1)
      }
-  conn, err := mgo.Dial("mongodb://localhost")
+  conn, err := mgo.Dial("mongodb://tjs:password@ds039684.mongolab.com:39684/mongo")
   conn.SetMode(mgo.Monotonic,true);
 c:=conn.DB("test").C("details");
 
